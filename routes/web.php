@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\gajiController;
 use App\Http\Controllers\karyawanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -44,6 +45,17 @@ Route::middleware('auth')->group(function () {
     Route::put('/admin/karyawan/update/{id}', [karyawanController::class, 'update'])->name('karyawan.update');
     Route::GET('/admin/karyawan-destroy/{id}', [karyawanController::class, 'destroy'])->name('karyawan-destroy');
     Route::get('/admin/karyawan-pdf', [karyawanController::class, 'exportpdf'])->name('exportpdf');
+
+    // Route Gaji
+    Route::get('admin/gaji/gaji', [gajiController::class, 'index'])->name('gaji');
+    Route::get('/admin/gaji-create', function () {
+        return view('admin/gaji/gaji-create');
+    })->name('gaji-create');
+    Route::post('/admin/gaji-store', [gajiController::class, 'store'])->name('gaji.store');
+    Route::get('/admin/gaji-edit/{id}', [gajiController::class, 'edit'])->name('gaji-edit');
+    Route::put('/admin/gaji/update/{id}', [gajiController::class, 'update'])->name('gaji.update');
+    Route::GET('/admin/gaji-destroy/{id}', [gajiController::class, 'destroy'])->name('gaji-destroy');
+    Route::get('/admin/gaji-pdf', [gajiController::class, 'exportpdf'])->name('exportpdf');
 });
 Route::get('/logout', function () {
     session()->forget('username');

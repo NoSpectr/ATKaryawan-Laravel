@@ -1,10 +1,10 @@
 @extends('admin.master')
-{{-- @php
-    $barangCount = \App\Models\ModelBarang::count();
-    $outletCount = \App\Models\ModelOutlet::count();
-    $supirCount = \App\Models\ModelSupir::count();
-    $gudangCount = \App\Models\ModelGudang::count();
-@endphp --}}
+@php
+    $KaryawanCount = \App\Models\ModelKaryawan::count();
+    $GajiCount = \App\Models\ModelGaji::count();
+    // $supirCount = \App\Models\ModelSupir::count();
+    // $gudangCount = \App\Models\ModelGudang::count();
+@endphp
 @section('content')
     <div class="pagetitle">
         <h1>Selamat Datang {{ session('username') }}!</h1>
@@ -14,41 +14,41 @@
             <!-- Left side columns -->
             <div class="col">
                 <div class="row">
-                    {{-- <!-- Barang Card -->
+                    <!-- Karyawan Card -->
                     <div class="col-xxl-3 col-md-6">
                         <div class="card info-card sales-card">
                             <div class="card-body">
-                                <h5 class="card-title">Data Barang</h5>
+                                <h5 class="card-title">Data Karyawan</h5>
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-boxes"></i>
+                                        <i class="bi bi-person-vcard"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>{{ $barangCount }}</h6>
+                                        <h6>{{ $KaryawanCount }}</h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div><!-- End Barang Card -->
+                    </div><!-- End Karyawan Card -->
 
-                    <!-- Baptis Card -->
+                    <!-- Gaji Card -->
                     <div class="col-xxl-3 col-md-6">
                         <div class="card info-card customers-card">
                             <div class="card-body">
-                                <h5 class="card-title">Data Gudang</h5>
+                                <h5 class="card-title">Data Gaji Karyawan</h5>
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-buildings"></i>
+                                        <i class="bi bi-cash-coin"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>{{ $gudangCount }}</h6>
+                                        <h6>{{ $GajiCount }}</h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div><!-- End Baptis Card -->
+                    </div><!-- End Gaji Card -->
 
-                    <!-- Outlet Card -->
+                    {{-- <!-- Outlet Card -->
                     <div class="col-xxl-3 col-md-6">
                         <div class="card info-card sales-card">
                             <div class="card-body">
@@ -80,7 +80,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div><!-- End Data Pernikahan Card --> --}}
+                    </div>
+                    <!-- End Data Pernikahan Card --> --}}
                 </div>
             </div>
     </section>
